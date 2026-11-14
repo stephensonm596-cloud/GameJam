@@ -13,12 +13,19 @@ public abstract class  Entity {
 	protected Vector2 position;
 	protected Vector2 velocity;
 	
+	
+	protected final int BASE_DAMAGE = 10;
+	protected final int BASE_HEALTH = 100;
+	
+	protected int health;
+	
 	public Entity(float posX, float posY, float width, float height,Texture texture) {
 		position = new Vector2(posX,posY);
 		velocity = new Vector2();
 		dimension = new Vector2(width,height);
 		this.texture = texture;
 		this.bounds = new Rectangle(posX,posY,width,height);
+		
 		
 	}
 	

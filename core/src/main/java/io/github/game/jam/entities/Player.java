@@ -3,6 +3,7 @@ package io.github.game.jam.entities;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import io.github.game.jam.Assets;
 
@@ -38,7 +39,16 @@ public class Player extends Entity {
 		
 		
 	}
+	
+	public void draw(SpriteBatch batch) {
+		batch
+	}
+	
+	public void damage(int damage) {
+		this.health -= damage;
+	}
 
+	
 	@Override
 	public void die() {
 		// TODO Auto-generated method stub

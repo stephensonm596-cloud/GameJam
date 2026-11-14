@@ -42,4 +42,10 @@ public class World {
 			platform.draw(spriteBatch);
 		}
 	}
+	
+	
+	
+	public ArrayList<Platform> getPlatforms() {
+		return platforms;
+	}
 }

@@ -19,6 +19,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
+import io.github.game.jam.entities.EntityManager;
 import io.github.game.jam.entities.Player;
 import io.github.game.jam.world.World;
 
@@ -30,7 +31,7 @@ public class GameScreen implements Screen{
 	
 	SpriteBatch spriteBatch;
 	FitViewport viewport;
-	Player player;
+	EntityManager entityManager;
 	public GameScreen(Main game) {
 		
 		this.game = game;
@@ -39,7 +40,7 @@ public class GameScreen implements Screen{
 		Assets.load();
 		Assets.manager.finishLoading();
 		gameWorld = new World();
-		player = new Player();
+		entityManager = new EntityManager(this);
 	}
 	@Override
 	public void show() {
@@ -69,6 +70,9 @@ public class GameScreen implements Screen{
 		spriteBatch.begin();
 		
 		gameWorld.draw(spriteBatch);
+		
+		
+		
 		spriteBatch.end();
 
 		
@@ -102,6 +106,14 @@ public class GameScreen implements Screen{
 	public void dispose() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public World getWorld() {
+		return gameWorld;
+	}
+	
+	public EntityManager getEntityManager() {
+		return entityManager;
 	}
 	
 
