@@ -10,6 +10,7 @@ public abstract class  Entity {
 	private Rectangle bounds;
 	
 	protected Vector2 dimension;
+	protected Vector2 acceleration;
 	protected Vector2 position;
 	protected Vector2 velocity;
 	

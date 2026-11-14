@@ -22,27 +22,24 @@ public class Player extends Entity {
 	@Override
 	public void update() {
 		
-		velocity.setZero();
+		acceleration.setZero();
 		
 		if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-	        velocity.x += 1;
+	        acceleration.x += 1;
 	    }
 		if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-			velocity.x -= 1;
+			acceleration.x -= 1;
 		}
 		if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-			velocity.y += 1;
+			acceleration.y += 1;
 		}
 		
-		
-		position.add(velocity);
-		
+		velocity.mulAdd(acceleration,Gdx.graphics.getDeltaTime());
+		position.mulAdd(velocity,Gdx.graphics.getDeltaTime());
 		
 	}
 	
-	public void draw(SpriteBatch batch) {
-		batch
-	}
+	
 	
 	public void damage(int damage) {
 		this.health -= damage;
