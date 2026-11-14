@@ -81,7 +81,6 @@ www-test/
 *.bak
 *.swp
 *~.nib
-.settings/
 .loadpath
 .externalToolBuilders/
 *.launch
